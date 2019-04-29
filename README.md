@@ -14,3 +14,12 @@ ALTIS has been evaluated in a large set of CT images gathered from different pub
 - *LIDC IDRI*, the data can be downloaded [here](https://wiki.cancerimagingarchive.net/display/Public/LIDC-IDRI). The gold-standard is located at `Materials/lidc_idri_part1.zip` and `Materials/lidc_idri_part2.zip` in this repository. The data has been separated into 2 parts because its size exceeded 100MB.
 
 ## Implementation
+
+The implementation of ALTIS is located at the folder `bin/` of this repository. It is the 64-bit binary version for Ubuntu 16.04. In order to run the software, just run the following commands.
+
+'''
+cd <path_to_the_binary>
+iftALTIS -i <input_ct_image> -o <output_label_mask> --improve-segmentation 25
+'''
+
+The file formats accepted by the software are: .nii, .nii.gz, .hdr, .scn. The `--improve-segmentation` flag is optional and is used when some parts of the lungs are left outside the segmentation. It will perform an extra delineation step to try to solve this problem. To see the all available flags of this software, just add the flag `-h` or `--help`.
