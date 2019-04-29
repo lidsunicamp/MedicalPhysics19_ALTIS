@@ -23,3 +23,5 @@ $iftALTIS -i <input_ct_image> -o <output_label_mask> --improve-segmentation 25
 ```
 
 The file formats accepted by the software are: .nii, .nii.gz, .hdr, .scn. The `--improve-segmentation` flag is optional and is used when some parts of the lungs are left outside the segmentation. It will perform an extra delineation step to try to solve this problem. To see the all available flags of this software, just add the flag `-h` or `--help`.
+
+Remember, in order for ALTIS to run correctly, the input image must be isotropic, i.e. the voxel size is the same in every dimension. Additionally, the method assumes that the patient orientation in the CT scan is from inferior to superior along the axial slices (z-axis), from right to left along the sagittal slices (x-axis), and from anterior to posterior along the coronal slices (y-axis). Therefore, in a coronal slice, the lungs and trachea appear in the upright position, being the right lung on the left side of the slice.
