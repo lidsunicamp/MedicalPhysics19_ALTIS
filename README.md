@@ -31,10 +31,24 @@ $chmod +x iftALTIS
 $./iftALTIS -i <input_ct_image> -o <output_label_mask>
 ```
 
-The file formats accepted by the software are: .nii, .nii.gz, .hdr, .scn. If some parts of the lungs are left unsegmented, add the flag `--improve-segmentation 25` as shown bellow. It will perform an extra delineation step to try to solve this problem. To see the all available flags of this software, just add the flag `-h` or `--help`.
+The file formats accepted by the software are: `.nii`, `.nii.gz`, `.hdr`, `.scn`. If some parts of the lungs are left unsegmented, add the flag `--improve-segmentation 25` as shown bellow. It will perform an extra delineation step to try to solve this problem. To see the all available flags of this software, just add the flag `-h` or `--help`.
 
 ```
 $./iftALTIS -i <input_ct_image> -o <output_label_mask> --improve-segmentation 25
 ```
 
-Remember, in order for ALTIS to run correctly, the input image must be isotropic, i.e. the voxel size is the same in every dimension. Additionally, the method assumes that the patient orientation in the CT scan is from inferior to superior along the axial slices (z-axis), from right to left along the sagittal slices (x-axis), and from anterior to posterior along the coronal slices (y-axis). Therefore, in a coronal slice, the lungs and trachea appear in the upright position, being the right lung on the left side of the slice. Otherwise, the method may not run correctly.
+---
+
+### Extra Requirements:
+- The input image must be **isotropic**: the voxel size is the same in every dimension.
+- The considered *patient orientation* in the CT scan must be (see image below):
+    - from inferior to superior along the axial slices (z-axis);
+    - from right to left along the sagittal slices (x-axis); and
+    - from anterior to posterior along the coronal slices (y-axis).
+
+![](./imgs/anatomical_directions/anatomical_directions.png)
+
+
+Therefore, in a coronal slice, the lungs and trachea appear in the upright position, being the right lung on the left side of the slice. Otherwise, the method may not run correctly.
+
+If a NIfTI image (`.nii`, `.nii.gz`) is provided, the program automatically rotates it according to the considered anatomical directions.
