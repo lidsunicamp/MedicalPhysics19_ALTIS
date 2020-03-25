@@ -52,3 +52,11 @@ $./iftALTIS -i <input_ct_image> -o <output_label_mask> --improve-segmentation 25
 Therefore, in a coronal slice, the lungs and trachea appear in the upright position, being the right lung on the left side of the slice. Otherwise, the method may not run correctly.
 
 If a NIfTI image (`.nii`, `.nii.gz`) is provided, the program automatically rotates it according to the considered anatomical directions.
+
+## Docker
+
+If prefered, there is a docker image with ALTIS and all basic dependencies already installed available at DockerHub under the repository lidsunicamp/altis_docker (https://hub.docker.com/r/lidsunicamp/altis_docker). Inside the image container, one can call the ALTIS program at any folder using the command line:
+
+```
+$iftALTIS -i <input_ct_image> -o <output_label_mask>
+```
