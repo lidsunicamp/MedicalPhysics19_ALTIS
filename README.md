@@ -60,3 +60,7 @@ If prefered, there is a docker image with ALTIS and all basic dependencies alrea
 ```
 $iftALTIS -i <input_ct_image> -o <output_label_mask>
 ```
+
+## Contact
+
+If you have any questions or suggestions, please send us a message on the e-mail azaelmsousa@lids.ic.unicamp.br or azaelmsousa@gmail.com.
