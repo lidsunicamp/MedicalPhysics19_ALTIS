@@ -31,7 +31,7 @@ $chmod +x iftALTIS
 $./iftALTIS -i <input_ct_image> -o <output_label_mask>
 ```
 
-The file formats accepted by the software are: `.nii`, `.nii.gz`, `.hdr`, `.scn`. If some parts of the lungs are left unsegmented, add the flag `--improve-segmentation 25` as shown bellow. It will perform an extra delineation step to try to solve this problem. To see the all available flags of this software, just add the flag `-h` or `--help`.
+The file formats accepted by the software are: `.nii`, `.nii.gz`, `.hdr`, `.scn`. If some parts of the lungs are left unsegmented, add the flag `--improve-segmentation 25` as shown bellow. It will perform an extra delineation step to try to solve this problem. To see all available flags of this software, just add the flag `-h` or `--help`.
 
 ```
 $./iftALTIS -i <input_ct_image> -o <output_label_mask> --improve-segmentation 25
